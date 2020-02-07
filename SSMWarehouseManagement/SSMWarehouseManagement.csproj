@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Desarrollo008\Source\Repos\SSMWarehouseManagement\SSMWarehouseManagement\SSMWarehouseManagement.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SSMLib\**" />
+    <Content Remove="SSMLib\**" />
+    <EmbeddedResource Remove="SSMLib\**" />
+    <None Remove="SSMLib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SSMReservas.Library">
+      <HintPath>SSMLib\SSMReservas.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

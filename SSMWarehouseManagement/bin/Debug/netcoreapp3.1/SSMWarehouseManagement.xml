@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SSMWarehouseManagement</name>
+    </assembly>
+    <members>
+        <member name="T:SSMWarehouseManagement.Helpers.DirectLog">
+            <summary>
+            Clase para lanzar errores al log
+            </summary>
+        </member>
+    </members>
+</doc>
