@@ -1,0 +1,1 @@
+La versión que usamos de SSMReservas.Library es la misma que la normal con la excepción de que tiene TODOS los MESSAGEBOX comentados.

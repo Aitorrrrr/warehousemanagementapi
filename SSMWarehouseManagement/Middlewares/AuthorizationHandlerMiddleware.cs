@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using SSMReservas.Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,13 @@ namespace SSMWarehouseManagement.Middlewares
 
         public async Task Invoke(HttpContext context)
         {
-            if (context.Request.Path == "/index.html" || context.Request.Path.StartsWithSegments("/swagger"))
+            string path = context.Request.Path.Value.ToString();
+            var conexion = new Conexion();
+            var parametros = new Conexion.Parametros("Aqua");
+
+            conexion.LeerConnect(ref parametros);
+
+            if (path == "/index.html" || path.StartsWith("/swagger"))
             {
                 // Funcionalidad de swagger
                 await _next.Invoke(context);
@@ -33,7 +40,7 @@ namespace SSMWarehouseManagement.Middlewares
                     // Encoding encoding = Encoding.GetEncoding("iso-8859-1");
                     // autorizacion = encoding.GetString(Convert.FromBase64String(header));
 
-                    if (header == "haha123")
+                    if (header == parametros.Autorizacion)
                     {
                         await _next.Invoke(context);
                     }

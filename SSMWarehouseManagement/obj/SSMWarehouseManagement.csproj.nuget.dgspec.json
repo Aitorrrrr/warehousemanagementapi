@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Desarrollo008\\Source\\Repos\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj": {}
+    "D:\\CosasAitor\\aitor\\Core_3.1\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Desarrollo008\\Source\\Repos\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj": {
+    "D:\\CosasAitor\\aitor\\Core_3.1\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Desarrollo008\\Source\\Repos\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj",
+        "projectUniqueName": "D:\\CosasAitor\\aitor\\Core_3.1\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj",
         "projectName": "SSMWarehouseManagement",
-        "projectPath": "C:\\Users\\Desarrollo008\\Source\\Repos\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj",
+        "projectPath": "D:\\CosasAitor\\aitor\\Core_3.1\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement.csproj",
         "packagesPath": "C:\\Users\\Desarrollo008\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Desarrollo008\\Source\\Repos\\SSMWarehouseManagement\\SSMWarehouseManagement\\obj\\",
+        "outputPath": "D:\\CosasAitor\\aitor\\Core_3.1\\SSMWarehouseManagement\\SSMWarehouseManagement\\SSMWarehouseManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -19,6 +19,7 @@
         "configFilePaths": [
           "C:\\Users\\Desarrollo008\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,6 +28,7 @@
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Program Files (x86)\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nexus3.iti.upv.es/repository/nuget-group-st/": {}
         },
@@ -44,6 +46,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0, )"
