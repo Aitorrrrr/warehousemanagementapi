@@ -4,6 +4,7 @@ using SSMWarehouseManagement.Data.Models;
 using SSMWarehouseManagement.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ namespace SSMWarehouseManagement.Repositories
                 {
                     connection.Open();
                     string sql = "Select NUMERO From DATOP" + Parametros.Empresa +
-                                " Where NUMERO_DOC = '" + numeroDoc + "' ";
+                                " Where NUMERO_DOC = '" + numeroDoc + "' and TIPOOPER = 'P'";
                     SqlCommand cmd = new SqlCommand(sql, connection);
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
@@ -226,12 +227,17 @@ namespace SSMWarehouseManagement.Repositories
                             string numeroAux = string.Concat(Enumerable.Repeat("0", 8 - numero.ToString().Length)) + numero;
 
                             numDoc = serie + numeroAux;
+                            readerContador.Dispose();
+
+                            sql = "update DATCT" + Parametros.Empresa +
+                                " set NUMERO = NUMERO + 1 where CODIGO = '" + contadorAlb + "'";
+                            cmd.CommandText = sql;
+                            cmd.ExecuteNonQuery();
                         }
                         else
                         {
                             return new RespuestaDto(1, "El código para la serie del documento no es válido.");
                         }
-                        readerContador.DisposeAsync();
                     }
 
                     int lineasInsertadas = 0;
@@ -444,7 +450,7 @@ namespace SSMWarehouseManagement.Repositories
                 {
                     connection.Open();
                     SqlTransaction transaction;
-                    transaction = connection.BeginTransaction("InternalCounterTrans");
+                    transaction = connection.BeginTransaction(IsolationLevel.ReadCommitted,"InternalCounterTrans");
 
                     string sql = "Select NUMERO_OP From DATINTERNALCOUNTER " +
                                 " Where COMPANY = '" + Parametros.Empresa + "' and EXERCISE = '" + Parametros.Ejercicio + "'";

@@ -33,7 +33,7 @@ namespace SSMWarehouseManagement.Repositories
                     connection.Open();
                     string sql = "Select O.NIF,P.NOMBRE,P.EXENTO_IVA From DATOP" + Parametros.Empresa +
                                 " O inner join DATPROV" + Parametros.Empresa + " P on O.NIF = P.NIF  Where NUMERO_DOC = '" + numeroDoc + "' " +
-                                " And TIPOOPER = 'P' And PENDIENTES > 0";
+                                " And TIPOOPER = 'P' And PENDIENTES > 0 And USERQUERY = '' And ISREADYUSER = ''";
                     SqlCommand cmd = new SqlCommand(sql, connection);
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())

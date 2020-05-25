@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SSMWarehouseManagement.Middlewares;
 using SSMWarehouseManagement.Registers;
-using System;
 
 namespace SSMWarehouseManagement
 {
@@ -22,7 +21,6 @@ namespace SSMWarehouseManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddMvc();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
